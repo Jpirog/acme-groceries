@@ -12,8 +12,8 @@ const _Groceries = ({ groceries, view, toggle, create, deleteThis })=> {
           groceries.filter(grocery => !view || ( grocery.purchased && view === 'purchased') ||( !grocery.purchased && view === 'needs') ).map( grocery => {
             return (
               <div key={ grocery.id } >
-                <li onClick={ ()=> toggle(grocery)} className={ grocery.purchased ? 'purchased': ''}>{ grocery.name } </li> 
-                <button key='btn1' onClick={ ()=> deleteThis(grocery)} >-</button>
+                <li style={{minWidth: '400px'}} onClick={ ()=> toggle(grocery)} className={ grocery.purchased ? 'purchased': ''}>{ grocery.name } 
+                {'   '} <button key='btn1' onClick={ ()=> deleteThis(grocery)} >-</button></li> 
               </div>
             );
           })
